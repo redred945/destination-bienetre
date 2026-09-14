@@ -89,13 +89,19 @@
     });
   }
 
+  // hide the floating call button while the footer or the contact form is in view,
+  // so it never sits on top of the footer links or the form fields/submit button
   var fab = document.querySelector('.call-fab');
-  var footerEl = document.querySelector('footer');
-  if (fab && footerEl && 'IntersectionObserver' in window) {
+  var fabHideTargets = Array.prototype.slice.call(document.querySelectorAll('footer, #formulaire'));
+  if (fab && fabHideTargets.length && 'IntersectionObserver' in window) {
+    var fabIntersecting = new Set();
     var fabIo = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { fab.classList.toggle('is-hidden', en.isIntersecting); });
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { fabIntersecting.add(en.target); } else { fabIntersecting.delete(en.target); }
+      });
+      fab.classList.toggle('is-hidden', fabIntersecting.size > 0);
     }, { rootMargin: '0px', threshold: 0 });
-    fabIo.observe(footerEl);
+    fabHideTargets.forEach(function (t) { fabIo.observe(t); });
   }
 
   var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));

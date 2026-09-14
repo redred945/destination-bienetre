@@ -262,7 +262,7 @@ section { padding-block: clamp(3.2rem, 7vw, 5.5rem); }
 @keyframes brandScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ---------- gallery ---------- */
-.gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; gap: 1rem; }
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; grid-auto-flow: dense; gap: 1rem; }
 .gallery__item { position: relative; border-radius: var(--radius-sm); overflow: hidden; }
 .gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .gallery__item:hover img { transform: scale(1.06); }
