@@ -108,10 +108,8 @@ header.bar.is-float { border-color: var(--line); box-shadow: 0 10px 30px -22px r
 .bar__in { display: flex; align-items: center; gap: 1.2rem; padding-block: 0.9rem; }
 
 .brandmark { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; color: inherit; }
-.brandmark__mark { width: 40px; height: 40px; flex: none; }
-.brandmark__type { display: flex; flex-direction: column; line-height: 1.12; }
-.brandmark__type b { font-family: var(--ff-display); font-style: italic; font-weight: 600; font-size: 1.28rem; letter-spacing: -0.01em; }
-.brandmark__type span { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.17em; text-transform: uppercase; color: var(--mid); }
+.brandmark__logo { height: 52px; width: auto; flex: none; display: block; }
+.foot .brandmark__logo { filter: brightness(0) invert(1); opacity: 0.92; }
 
 .bar__brand { margin-right: auto; }
 .bar__burger { display: none; }
@@ -147,9 +145,7 @@ header.bar.is-float { border-color: var(--line); box-shadow: 0 10px 30px -22px r
   .bar__burger[aria-expanded="true"] span::after { transform: translateY(-5px) rotate(-45deg); }
 }
 @media (max-width: 420px) {
-  .brandmark__mark { width: 32px; height: 32px; }
-  .brandmark__type b { font-size: 1.08rem; }
-  .brandmark__type span { font-size: 0.56rem; }
+  .brandmark__logo { height: 42px; }
   .bar__cta { padding: 0.75em 0.95em; font-size: 0.76rem; }
 }
 
@@ -369,8 +365,6 @@ section { padding-block: clamp(3.2rem, 7vw, 5.5rem); }
 footer { background: var(--deep); color: var(--on-deep); }
 .foot { padding-block: clamp(2.6rem, 5vw, 3.6rem) 1.8rem; }
 .foot__top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; padding-bottom: 2.2rem; border-bottom: 1px solid rgba(244,239,227,0.14); }
-.foot .brandmark__type span { color: var(--on-deep-mid); }
-.foot .brandmark__type b { color: var(--on-deep); }
 .foot-cols { display: flex; gap: clamp(2rem, 6vw, 4.5rem); flex-wrap: wrap; }
 .foot-col h3 { font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
 .foot-col a, .foot-col p { display: block; color: var(--on-deep-mid); text-decoration: none; font-size: 0.92rem; margin-bottom: 0.55rem; }
